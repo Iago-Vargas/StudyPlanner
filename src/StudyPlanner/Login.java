@@ -6,6 +6,7 @@ package StudyPlanner;
 
 import DAO.UsuarioDAO;
 import beans.Usuario;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -21,7 +22,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
        initComponents();
-       
+       setSize(440, 380);//Ajusto tamanho
+       setLocationRelativeTo(null);//Coloco no centro da tela
+
     }
 
     /**
@@ -43,7 +46,7 @@ public class Login extends javax.swing.JFrame {
         btnCadastro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(filler1);
         filler1.setBounds(225, 272, 0, 0);
@@ -80,12 +83,14 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setBounds(40, 170, 90, 40);
 
         txtSenha.setBackground(new java.awt.Color(0, 204, 204));
+        txtSenha.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txtSenha);
-        txtSenha.setBounds(120, 180, 180, 20);
+        txtSenha.setBounds(120, 180, 180, 30);
 
         txtCPF1.setBackground(new java.awt.Color(0, 204, 204));
+        txtCPF1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         txtCPF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtCPF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

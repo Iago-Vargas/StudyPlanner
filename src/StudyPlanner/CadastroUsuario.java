@@ -19,6 +19,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
      */
     public CadastroUsuario() {
         initComponents();
+        setSize(350, 345);
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -36,6 +39,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         txtSenha = new javax.swing.JTextField();
         txtCPF1 = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,6 +65,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jLabel5.setBounds(40, 100, 80, 40);
 
         txtSenha.setBackground(new java.awt.Color(0, 204, 204));
+        txtSenha.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         txtSenha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +76,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         txtSenha.setBounds(90, 170, 180, 20);
 
         txtCPF1.setBackground(new java.awt.Color(0, 204, 204));
+        txtCPF1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         txtCPF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtCPF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,8 +96,21 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalvar);
-        btnSalvar.setBounds(110, 240, 75, 23);
+        btnSalvar.setBounds(130, 230, 75, 23);
 
+        btnVoltar.setBackground(new java.awt.Color(0, 204, 204));
+        btnVoltar.setForeground(new java.awt.Color(0, 0, 0));
+        btnVoltar.setText("LOGIN");
+        btnVoltar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVoltar);
+        btnVoltar.setBounds(130, 270, 75, 23);
+
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundologin.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 360, 310);
@@ -130,6 +149,13 @@ public class CadastroUsuario extends javax.swing.JFrame {
        }
        limpar();
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Login l = new Login();
+        l.setVisible(true);
+    }//GEN-LAST:event_btnVoltarActionPerformed
     private void limpar(){
         txtSenha.setText("");
         txtCPF1.setText("");
@@ -171,6 +197,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

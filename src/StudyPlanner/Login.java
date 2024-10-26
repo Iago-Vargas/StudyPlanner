@@ -40,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JTextField();
         txtCPF1 = new javax.swing.JTextField();
+        btnCadastro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,7 +58,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEntrar);
-        btnEntrar.setBounds(150, 260, 75, 23);
+        btnEntrar.setBounds(100, 260, 75, 23);
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 51));
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 1, 48)); // NOI18N
@@ -94,6 +95,18 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtCPF1);
         txtCPF1.setBounds(120, 120, 180, 20);
 
+        btnCadastro.setBackground(new java.awt.Color(0, 204, 204));
+        btnCadastro.setForeground(new java.awt.Color(0, 0, 0));
+        btnCadastro.setText("CADASTRO");
+        btnCadastro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCadastro);
+        btnCadastro.setBounds(190, 260, 75, 23);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundologin.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
@@ -123,6 +136,13 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "USUARIO NÃO ENCONTADO");
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
+        // TODO add your handling code here:
+        this.dispose(); //Comando para fechar o JFrame
+        CadastroUsuario cd = new CadastroUsuario();
+        cd.setVisible(true);
+    }//GEN-LAST:event_btnCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +180,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastro;
     private javax.swing.JButton btnEntrar;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;

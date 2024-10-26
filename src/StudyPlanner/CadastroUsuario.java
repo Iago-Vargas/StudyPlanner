@@ -4,6 +4,10 @@
  */
 package StudyPlanner;
 
+import DAO.UsuarioDAO;
+import beans.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author iagov
@@ -26,18 +30,110 @@ public class CadastroUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JTextField();
+        txtCPF1 = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel3.setFont(new java.awt.Font("Showcard Gothic", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel3.setText("CADASTRO");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(40, 20, 400, 60);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel4.setText("SENHA:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(10, 160, 80, 40);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel5.setText("CPF:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(40, 100, 80, 40);
+
+        txtSenha.setBackground(new java.awt.Color(0, 204, 204));
+        txtSenha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(90, 170, 180, 20);
+
+        txtCPF1.setBackground(new java.awt.Color(0, 204, 204));
+        txtCPF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtCPF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPF1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCPF1);
+        txtCPF1.setBounds(90, 110, 180, 20);
+
+        btnSalvar.setBackground(new java.awt.Color(0, 204, 204));
+        btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalvar.setText("SALVAR");
+        btnSalvar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalvar);
+        btnSalvar.setBounds(110, 240, 75, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundologin.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 736, 345);
+        jLabel1.setBounds(0, 0, 360, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void txtCPF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPF1ActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+       String cpf = txtCPF1.getText();
+       String senha = txtSenha.getText();
+       
+       
+       Usuario u = new Usuario();
+       if (cpf.isEmpty()){
+           JOptionPane.showMessageDialog(null, "INSIRA O CPF");
+       }
+       if (senha.isEmpty()){
+           JOptionPane.showMessageDialog(null, "INSIRA A SENHA");
+
+       }
+       else{
+        u.setCpf(cpf);
+        u.setSenha(senha);
+
+        UsuarioDAO uDAO = new UsuarioDAO();
+        uDAO.inserir(u);
+       }
+       limpar();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+    private void limpar(){
+        txtSenha.setText("");
+        txtCPF1.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -74,6 +170,12 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtCPF1;
+    private javax.swing.JTextField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
